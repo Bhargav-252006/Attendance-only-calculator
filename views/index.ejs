@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <header>
+                <h1><%= title %></h1>
+                <p class="subtitle">Track and plan your college attendance requirements</p>
+            </header>
+
+            <%- include('partials/attendance-form') %>
+        </div>
+
+        <%- include('partials/results') %>
+
+        <!-- Footer -->
+        <footer class="mt-5">
+            <!-- Upper Footer with Gradient -->
+            <div class="py-4" style="background: linear-gradient(135deg, #3a7bd5, #1e3c72); color: white;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center mb-3">
+                            <h4 class="mb-3 border-bottom pb-2">Development Team</h4>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <% developers.forEach((dev, index) => { %>
+                        <div class="col-md-4 col-sm-6 mb-3">
+                            <div class="card border-0 shadow" style="background-color: #1e3c72; border-radius: 10px;">
+                                <div class="card-body text-center p-4">
+                                    <h5 class="card-title text-white fw-bold mb-3" style="font-size: 1.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);"><%= dev.name %></h5>
+                                    <div class="badge bg-warning text-dark mb-2 px-3 py-2" style="font-size: 1rem;"> <%= dev.rollNumber %></div>
+                                    <p class="card-text text-white mt-2" style="font-weight: 500; font-size: 1.1rem;">Web Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright Footer -->
+            <div class="py-3 bg-dark text-white-50">
+                <div class="container text-center">
+                    <div class="row align-items-center">
+                        <div class="col-12 text-center">
+                            <p class="mb-0">© <%= copyrightYear %> Attendance Calculator | All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html> 
